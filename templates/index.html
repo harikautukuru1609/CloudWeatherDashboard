@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Weather Dashboard</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div>
+                <p class="eyebrow">CLOUD MONITORING</p>
+                <h1>Weather Dashboard</h1>
+                <p class="subtitle">
+                    Monitor weather conditions around the world.
+                </p>
+            </div>
+            <span class="cloud">🌤️</span>
+        </header>
+
+        <form id="weatherForm">
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name, e.g. Chennai"
+                value="Chennai"
+                required
+            >
+            <button type="submit" id="searchButton">
+                Search Weather
+            </button>
+        </form>
+
+        <p id="message" role="status"></p>
+
+        <section id="weatherPanel" hidden>
+            <div class="hero">
+                <div>
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="location"></h2>
+                    <h3><span id="temperature"></span>°C</h3>
+                    <p id="description" class="condition"></p>
+                    <p>Feels like <span id="feelsLike"></span>°C</p>
+                </div>
+                <img id="weatherIcon" alt="Weather condition">
+            </div>
+
+            <div class="metrics">
+                <article class="metric">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <h2><span id="humidity"></span>%</h2>
+                </article>
+
+                <article class="metric">
+                    <span>💨</span>
+                    <p>Wind Speed</p>
+                    <h2><span id="wind"></span> m/s</h2>
+                </article>
+
+                <article class="metric">
+                    <span>🌡️</span>
+                    <p>Pressure</p>
+                    <h2><span id="pressure"></span> hPa</h2>
+                </article>
+            </div>
+        </section>
+
+        <footer>Cloud-Based Weather Monitoring System</footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

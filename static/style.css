@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3fa;
+    color: #172b4d;
+}
+
+.container {
+    max-width: 1000px;
+    width: calc(100% - 32px);
+    margin: 40px auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+h1 {
+    margin: 8px 0;
+    font-size: clamp(28px, 5vw, 40px);
+}
+
+.subtitle {
+    color: #66758a;
+}
+
+.eyebrow {
+    color: #4263c7;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cloud {
+    font-size: 58px;
+}
+
+#weatherForm {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #d6deeb;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    background: #4263c7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+}
+
+#message {
+    color: #a32121;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 32px;
+    border-radius: 24px;
+    color: white;
+    background: linear-gradient(130deg, #2949a2, #5887df);
+    box-shadow: 0 12px 32px #2949a226;
+}
+
+.hero .eyebrow {
+    color: #d9e6ff;
+}
+
+.hero h2 {
+    margin: 10px 0;
+}
+
+.hero h3 {
+    margin: 12px 0;
+    font-size: clamp(48px, 9vw, 76px);
+}
+
+.condition {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+#weatherIcon {
+    width: 120px;
+    height: 120px;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.metric {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e0e7f1;
+    border-radius: 18px;
+}
+
+.metric > span {
+    font-size: 28px;
+}
+
+.metric p {
+    color: #66758a;
+}
+
+.metric h2 {
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    color: #66758a;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 24px auto;
+    }
+
+    #weatherForm {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 22px;
+    }
+
+    #weatherIcon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+}
